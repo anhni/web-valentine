@@ -1,0 +1,116 @@
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f2f2f2;
+  }
+  
+  header {
+    text-align: center;
+    color: #e74c3c;
+    font-size: 2em;
+  }
+  
+  main {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .message {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .activities {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  
+  .activities li {
+    list-style: none;
+    margin-bottom: 10px;
+  }
+  
+  /* Add styles for interactive elements (hearts, canvas, etc.) */
+  
+  footer {
+    text-align: center;
+    font-size: 0.8em;
+    margin-top: 20px;
+  }
+  
+  #drop-button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #e74c3c;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  #dropping-heart {
+    /* position: absolute; */
+    top: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 100px;
+    /* overflow: hidden; */
+    /* background-color: blue; */
+
+    z-index: 10;
+  }
+  
+  .fas.fa-heart {
+    /* position: absolute; */
+    color: red;
+    font-size: 3em;
+    animation: drop 7s ease-in-out infinite;
+  }
+  
+  @keyframes drop {
+    from {
+      transform: translateY(-300px);
+      /* transform: translateX(-100px); */
+
+    }
+    to {
+      transform: translateY(200px);
+      /* transform: translateX(100px); */
+
+    }
+  }
+
+  .heart {
+    position: absolute;
+    width: 100px;
+    height: 90px;
+    margin-top: 10px;
+    animation: drop 3s ease-in-out infinite;
+  }
+  
+  .heart::before, .heart::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 52px;
+    height: 80px;
+    border-radius: 50px 50px 0 0;
+    background: red;
+  }
+  
+  .heart::before {
+    left: 50px;
+    transform: rotate(-45deg);
+    transform-origin: 0 100%;
+  }
+  
+  .heart::after {
+    left: 0;
+    transform: rotate(45deg);
+    transform-origin: 100% 100%;
+  }
