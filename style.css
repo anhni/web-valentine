@@ -10,6 +10,28 @@ body {
     color: #e74c3c;
     font-size: 2em;
   }
+
+
+  .header-flower {
+    float: left;
+    width: 10%;
+  }
+
+  .header-flower img {
+    width: 200px;
+    height: 200px;
+  }
+
+  .header-message {
+    float: left;
+    width: 70%;
+  }
+  .header-container::after {
+      content: "";
+      display: table;
+      clear: both;
+    
+  }
   
   main {
     display: flex;
@@ -20,8 +42,10 @@ body {
   .message {
     background-color: #fff;
     padding: 20px;
-    border-radius: 5px;
+    border-radius: 10px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 40px;
+    /* width: 100%; */
   }
   
   .activities {
@@ -43,13 +67,14 @@ body {
     margin-top: 20px;
   }
   
-  #drop-button {
+  .drop-button {
     padding: 10px 20px;
     border: none;
     background-color: #e74c3c;
     color: #fff;
     font-size: 16px;
     cursor: pointer;
+    border-radius: 10px;
   }
   
   #dropping-heart {
@@ -62,24 +87,24 @@ body {
     /* overflow: hidden; */
     /* background-color: blue; */
 
-    z-index: 10;
+    z-index: 20;
   }
   
   .fas.fa-heart {
     /* position: absolute; */
     color: red;
     font-size: 3em;
-    animation: drop 7s ease-in-out infinite;
+    animation: drop 10s ease-in-out infinite;
   }
   
   @keyframes drop {
     from {
-      transform: translateY(-300px);
+      transform: translateY(-500px);
       /* transform: translateX(-100px); */
 
     }
     to {
-      transform: translateY(200px);
+      transform: translateY(2000px);
       /* transform: translateX(100px); */
 
     }
@@ -90,7 +115,7 @@ body {
     width: 100px;
     height: 90px;
     margin-top: 10px;
-    animation: drop 3s ease-in-out infinite;
+    animation: drop 10s ease-in-out infinite;
   }
   
   .heart::before, .heart::after {
@@ -113,4 +138,88 @@ body {
     left: 0;
     transform: rotate(45deg);
     transform-origin: 100% 100%;
+  }
+
+  .image{
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 10px;
+    margin-bottom: 40px;
+  }
+
+  .left-container {
+    padding: 20px;
+    width: 45%;
+    float: left;
+  }
+
+  .right-container {
+    padding: 20px;
+    width: 45%;
+    float: right;
+  }
+
+  .img-container {
+    border-radius: 20%;
+    z-index: 10;
+  }
+
+  .message-container {
+    /* float: right; */
+    background-color: #e74c3c;
+    /* height: 100% */
+
+  }
+
+  .scroll-parent {
+    position: relative;
+    width: 100vw;
+    height: 30rem;
+    overflow-x: hidden;
+    background-color: #e74c3c;
+    /* padding: 10px; */
+    z-index: 10;
+
+  }
+  
+  .scroll-element {
+    width: inherit;
+    height: inherit;
+    position: absolute;
+    left: 0%;
+    top: 2%;
+    /* animation: primary 10s linear infinite; */
+  }
+
+  .scroll-element img{
+    width: 20%;
+    border-radius: 10px;
+    padding-left: 29px;
+    padding-right: 29px;
+  }
+  
+  .primary {
+    animation: primary 20s linear infinite;
+  }
+  
+  .secondary {
+    animation: secondary 20s linear infinite;
+  }
+
+  @keyframes primary {
+    from {
+      left: 0%;
+    }
+    to {
+      left: -100%;
+    }
+  }
+
+  @keyframes secondary {
+    from {
+      left: 100%;
+    }
+    to {
+      left: 0%;
+    }
   }
